@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: hot-property-demo
+
+server:
+  port: ${appPort:7707}   
+  
+consule:
+  host: 192.168.56.1
+    
+# Logging
+logging:
+  pattern:
+    console: "[%-5level] %date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %logger{15}#%line %msg\n"
+  level:
+    root: DEBUG
+    com.netflix.config: DEBUG
+    com.ecwid.consul: DEBUG
+    org.apache.commons.configuration: DEBUG
+    com.training.mjunction.usersvcs: DEBUG
+    org.springframework: ERROR
+    org.hibernate: DEBUG
+    sun.rmi: ERROR
+    org.reflections: ERROR
+    sun.reflect: ERROR
+    org.apache.coyote.http11: ERROR
+    org.glassfish.jersey.internal.util: ERROR
+    org.apache.tomcat.util: ERROR
+    org.apache.catalina.core: ERROR
+    com.sun.jersey.server.impl: ERROR

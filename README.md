@@ -1,2 +1,2 @@
-# hot-property-demo
-Hot Property Deploy Demo
+# product-composite
+Product Composite Service
