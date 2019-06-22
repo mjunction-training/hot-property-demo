@@ -7,16 +7,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.Import;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.annotation.RequestScope;
 
-import com.expogrow.hot.property.consule.ConsulePropertyConfig;
+import com.expogrow.hot.property.consule.EnableDynamicProperties;
 
+@EnableDynamicProperties
 @SpringBootApplication
-@Import(ConsulePropertyConfig.class)
 public class Application extends SpringBootServletInitializer {
 
 	private static Log logger = LogFactory.getLog(Application.class);
@@ -33,7 +32,7 @@ public class Application extends SpringBootServletInitializer {
 	}
 
 	@Controller
-	@RequestScope
+	@RefreshScope
 	public class SampleController {
 
 		@Value("${name:World}")
